@@ -2,13 +2,11 @@ from tkinter import *
 import os
 
 do_instalacji = ['Google Chrome', 'Adobe Reader', '7 Zip', 'VLC', 'Slack']
+data = {}
 a = 60
 
 def button(*args):
     values = [(prog, var.get()) for prog, var in data.items()]
-
-data = {}
-
 
 window = Tk()
 window.title("Chocolatey")
