@@ -28,7 +28,6 @@ window = Tk()
 window.title("Chocolatey")
 window.geometry("600x400")
 window.configure(bg = "#088F8F")
-print("git dziala")
 
 var1 = IntVar()
 var2 = IntVar()
