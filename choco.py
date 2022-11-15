@@ -45,3 +45,4 @@ thunderbird = Checkbutton(window, text='7 Zip', variable=var6, onvalue=True, off
 przycisk = Button(window, text="Zainstaluj programy!", command=button, font=("", 19,)).place(x = 170, y = 300)
 
 window.mainloop()
+print('siema')
