@@ -1,9 +1,14 @@
 from tkinter import *
 import os
 
-do_instalacji = ['Google Chrome', 'Adobe Reader', '7 Zip', 'VLC', 'Slack']
-#links = ['choco install googlechrome', 'choco install adobereader', 'choco install 7zip.install', 'choco install vlc', 'choco install slack']
-links = ['choco install googlechrome -y', 'choco install adobereader -y', 'choco install 7zip.install -y', 'choco install vlc -y', 'choco install slack -y']
+do_instalacji = ['Google Chrome', 'Adobe Reader', '7 Zip', 'VLC', 'Slack', 'Revit']
+links = ['choco install googlechrome -y',
+ 'choco install adobereader -y', 
+ 'choco install 7zip.install -y', 
+ 'choco install vlc -y', 
+ 'choco install slack -y',
+ 'start revit.exe'
+ ]
 data = {}
 a = 60
 b = 0
@@ -18,7 +23,7 @@ def button(*args):
         else:
             print('brak')
             x+=1
-    print(values)
+    #print(values)
 
 window = Tk()
 window.title("Chocolatey")
