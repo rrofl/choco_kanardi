@@ -35,6 +35,7 @@ def button(*args):
     values = [(prog, var.get()) for prog, var in data.items()]
     values2 = [(prog, var.get()) for prog, var in data.items()]
     x = 0
+    y = 0
     for q in programy:
         if values[x][1] == 1:
             os.system(f'{odnosniki[x]}')
@@ -43,12 +44,12 @@ def button(*args):
             print('brak')
             x+=1
     for e in zestawy:
-        if values2[x][1] == 1:
+        if values2[y][1] == 1:
             os.system(f'{odnosniki[x]}')
-            x+=1
+            y+=1
         else:
             print('brak')
-            x+=1
+            y+=1
 
 set_appearance_mode("dark")
 set_default_color_theme("dark-blue")
