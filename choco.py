@@ -1,47 +1,37 @@
 from tkinter import *
 import os
 
-def button():
-    if (var1.get() == True & var2.get() == True & var3.get() == True):
-        print(var1.get(), var2.get(), var3.get())
-        #os.system('cmd /k "choco install googlechrome   adobereader    7zip.install"')
-    elif (var1.get() == True & var2.get() == True & var3.get() == False):
-        print(var1.get(), var2.get(), var3.get())
-        #os.system('cmd /k "choco install googlechrome   adobereader"')
-    elif (var1.get() == True & var2.get() == False & var3.get() == True):
-        print(var1.get(), var2.get(), var3.get())
-        #os.system('cmd /k "choco install googlechrome   7zip.install"')
-    elif (var1.get() == False & var2.get() == True & var3.get() == True):
-        print(var1.get(), var2.get(), var3.get())
-        #os.system('cmd /k "choco install adobereader   7zip.install"')
-    elif (var1.get() == True & var2.get() == False & var3.get() == False):
-        print(var1.get(), var2.get(), var3.get())
-        #os.system('cmd /k "choco install googlechrome"')
-    elif (var1.get() == False & var2.get() == True & var3.get() == False):
-        print(var1.get(), var2.get(), var3.get())
-        #os.system('cmd /k "choco install adobereader"')
-    elif (var1.get() == False & var2.get() == False & var3.get() == True):
-        print(var1.get(), var2.get(), var3.get())
-        #os.system('cmd /k "choco install 7zip.install"')
+do_instalacji = ['Google Chrome', 'Adobe Reader', '7 Zip', 'VLC', 'Slack']
+#links = ['choco install googlechrome', 'choco install adobereader', 'choco install 7zip.install', 'choco install vlc', 'choco install slack']
+links = ['choco install googlechrome -y', 'choco install adobereader -y', 'choco install 7zip.install -y', 'choco install vlc -y', 'choco install slack -y']
+data = {}
+a = 60
+b = 0
+
+def button(*args):
+    values = [(prog, var.get()) for prog, var in data.items()]
+    x = 0
+    for q in do_instalacji:
+        if values[x][1] == 1:
+            os.system(f'{links[x]}')
+            x+=1
+        else:
+            print('brak')
+            x+=1
+    print(values)
 
 window = Tk()
 window.title("Chocolatey")
-window.geometry("600x400")
-window.configure(bg = "#088F8F")
+window.geometry("600x400") 
+window.configure(bg = "#344955")
 
-var1 = IntVar()
-var2 = IntVar()
-var3 = IntVar()
-var4 = IntVar()
-var5 = IntVar()
-var6 = IntVar()
-programy = Label(window, text="Wybierz programy do instalacji: ", bg = "#088F8F", font=("", 19, 'bold')).place(x = 110, y = 20)
-google_chrome = Checkbutton(window, text='Google Chrome', variable=var1, onvalue=True, offvalue=False, bg = "#088F8F", font=("", 16)).place(x = 110, y = 60)
-adobe_reader = Checkbutton(window, text='Adobe Reader', variable=var2, onvalue=True, offvalue=False, bg = "#088F8F", font=("", 16)).place(x = 110, y = 90)
-seven_zip = Checkbutton(window, text='7 Zip', variable=var3, onvalue=True, offvalue=False, bg = "#088F8F", font=("", 16)).place(x = 110, y = 120)
-vlc = Checkbutton(window, text='VLC', variable=var4, onvalue=True, offvalue=False, bg = "#088F8F", font=("", 16)).place(x = 110, y = 150)
-slack = Checkbutton(window, text='Slack', variable=var5, onvalue=True, offvalue=False, bg = "#088F8F", font=("", 16)).place(x = 110, y = 180)
-thunderbird = Checkbutton(window, text='7 Zip', variable=var6, onvalue=True, offvalue=False, bg = "#088F8F", font=("", 16)).place(x = 110, y = 210)
-przycisk = Button(window, text="Zainstaluj programy!", command=button, font=("", 19,)).place(x = 170, y = 300)
+for prog in do_instalacji:
+    var = IntVar()
+    Checkbutton(window, text=prog, variable=var, onvalue=1, offvalue=0, bg="#344955", font=("", 16)).place(x=110, y=a)
+    data[prog] = var
+    a += 40
+
+programy = Label(window, text="Wybierz programy do instalacji: ", bg="#344955", font=("", 19, 'bold')).place(x=110, y=20)
+przycisk = Button(window, text="Zainstaluj programy!", command=button, font=("", 19,)).place(x=170,y =300)
 
 window.mainloop()
