@@ -9,19 +9,26 @@ b = 0
 
 def button(*args):
     values = [(prog, var.get()) for prog, var in data.items()]
-    print(true_or_false[0])
+    x = 0
+    for q in do_instalacji:
+        if values[x][1] == 1:
+            #print(f'{links[x]}')
+            os.system(f'{links[x]}')
+            x+=1
+        else:
+            print('brak')
+            x+=1
     print(values)
 
 window = Tk()
 window.title("Chocolatey")
-window.geometry("600x400")
+window.geometry("600x400") 
 window.configure(bg = "#344955")
 
 for prog in do_instalacji:
     var = IntVar()
     Checkbutton(window, text=prog, variable=var, onvalue=1, offvalue=0, bg="#344955", font=("", 16)).place(x=110, y=a)
     data[prog] = var
-    true_or_false = [(var.get() for var in data.items())]
     a += 40
 
 programy = Label(window, text="Wybierz programy do instalacji: ", bg="#344955", font=("", 19, 'bold')).place(x=110, y=20)
