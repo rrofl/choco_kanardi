@@ -1,42 +1,77 @@
 from tkinter import *
+from customtkinter import *
 import os
+from PIL import Image, ImageTk
 
-do_instalacji = ['Google Chrome', 'Adobe Reader', '7 Zip', 'VLC', 'Slack', 'Revit']
-links = ['choco install googlechrome -y',
+customowe = ['Google Chrome', 'Adobe Reader', '7 Zip', 'VLC', 'Slack', 'Revit']
+odnosniki = ['choco install googlechrome -y',
  'choco install adobereader -y', 
  'choco install 7zip.install -y', 
  'choco install vlc -y', 
  'choco install slack -y',
  'start revit.exe'
  ]
+zestawy = ['Optident', 'Rexer', 'Arkana', 'Invent', 'DTA', 'VM', 'Netkable', 'HMMH']
+odnosniki_zestawy = {
+    'optident' : '',
+    'rexer' : '',
+    'arkana' : '',
+    'invent' : '',
+    'dta' : '',
+    'vm' : '',
+    'netkable' : '',
+    'hmmh' : ''
+                    }
+
 data = {}
-a = 60
+data2 = {}
+width = 600
+length = 500
+a = 80
 b = 0
+c = 80
 
 def button(*args):
     values = [(prog, var.get()) for prog, var in data.items()]
+    values2 = [(zest, var2.get()) for zest, var2 in data2.items()]
     x = 0
-    for q in do_instalacji:
+    y = 0
+    for q in customowe:
         if values[x][1] == 1:
-            os.system(f'{links[x]}')
+            os.system(f'{odnosniki[x]}')
             x+=1
         else:
             print('brak')
             x+=1
-    #print(values)
+    for p in zestawy:
+        if values2[y][1] == 1:
+            os.system(f'{odnosniki_zestawy[y]}')
+            y+=1
+        else:
+            print('brak')
+            y+=1
 
-window = Tk()
+set_appearance_mode("dark")
+set_default_color_theme("dark-blue")
+window = CTk()
 window.title("Chocolatey")
-window.geometry("600x400") 
-window.configure(bg = "#344955")
+ikonka = ImageTk.PhotoImage(Image.open('kanardi.png'))
+window.wm_iconphoto(False, ikonka)
+window.geometry(f"{width}x{length}")
 
-for prog in do_instalacji:
+for prog in customowe:
     var = IntVar()
-    Checkbutton(window, text=prog, variable=var, onvalue=1, offvalue=0, bg="#344955", font=("", 16)).place(x=110, y=a)
+    CTkCheckBox(window, text=prog, variable=var, onvalue=1, offvalue=0, text_font=("", 18)).place(x=width/20, y=a)
     data[prog] = var
     a += 40
+for zest in zestawy:
+    var2 = IntVar()
+    CTkCheckBox(window, text=zest, variable=var2, onvalue=1, offvalue=0, text_font=("", 18)).place(x=width/1.5, y=c)
+    data[prog] = var2
+    c += 40
 
-programy = Label(window, text="Wybierz programy do instalacji: ", bg="#344955", font=("", 19, 'bold')).place(x=110, y=20)
-przycisk = Button(window, text="Zainstaluj programy!", command=button, font=("", 19,)).place(x=170,y =300)
+programy = CTkLabel(window, text="Wybierz programy/zestaw do instalacji: ", text_font=("", 19, 'bold')).place(x=width/9, y=length/30)
+przycisk = CTkButton(window, text="Zainstaluj!", command=button, fg_color='grey', hover_color='green', text_font=("", 19,)).place(x=width/2.6,y=length-60)
 
+window.resizable(0,0)
 window.mainloop()
