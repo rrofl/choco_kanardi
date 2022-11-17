@@ -22,9 +22,7 @@ c = 80
 
 def button(*args):
     values = [(prog, var.get()) for prog, var in data.items()]
-    values2 = [(zest, var2.get()) for zest, var2 in data2.items()]
     x = 0
-    y = 0
     for q in customowe:
         if values[x][1] == 1:
             os.system(f'{odnosniki[x]}')
