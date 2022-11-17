@@ -25,10 +25,6 @@ a = 80
 b = 0
 c = 80
 
-window = Tk()
-window.title("Chocolatey")
-window.geometry(f"{width}x{length}")
-
 def button_single(*args):
     values = [(prog, var.get()) for prog, var in data.items()]
     x = 0
@@ -39,6 +35,11 @@ def button_single(*args):
         else:
             print('brak programow')
             x+=1
+
+window = Tk()
+window.title("Chocolatey")
+window.geometry(f"{width}x{length}")
+
 for prog in customowe:
     var = IntVar()
     Checkbutton(window, text=prog, variable=var, onvalue=1, offvalue=0, font=("", 18)).place(x=width/20, y=a)
