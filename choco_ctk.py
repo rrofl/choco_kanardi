@@ -13,7 +13,6 @@ odnosniki = ['choco install googlechrome -y',
  ]
 
 data = {}
-data2 = {}
 width = 600
 length = 500
 a = 80

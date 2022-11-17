@@ -15,7 +15,6 @@ width = 600
 length = 500
 a = 80
 b = 0
-c = 80
 
 def button(*args):
     values = [(prog, var.get()) for prog, var in data.items()]
