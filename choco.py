@@ -56,17 +56,17 @@ window.geometry(f"{width}x{length}")
 
 for prog in customowe:
     var = IntVar()
-    Checkbutton(window, text=prog, variable=var, onvalue=1, offvalue=0, text_font=("", 18)).place(x=width/20, y=a)
+    Checkbutton(window, text=prog, variable=var, onvalue=1, offvalue=0, font=("", 18)).place(x=width/20, y=a)
     data[prog] = var
     a += 40
 for zest in zestawy:
     var2 = IntVar()
-    Checkbutton(window, text=zest, variable=var2, onvalue=1, offvalue=0, text_font=("", 18)).place(x=width/1.5, y=c)
-    data[prog] = var2
+    Checkbutton(window, text=zest, variable=var2, onvalue=1, offvalue=0, font=("", 18)).place(x=width/1.5, y=c)
+    data[zest] = var2
     c += 40
 
-programy = Label(window, text="Wybierz programy/zestaw do instalacji: ", text_font=("", 19, 'bold')).place(x=width/9, y=length/30)
-przycisk = Button(window, text="Zainstaluj!", command=button, text_font=("", 19)).place(x=width/2.6,y=length-60)
+programy = Label(window, text="Wybierz programy/zestaw do instalacji: ", font=("", 19, 'bold')).place(x=width/9, y=length/30)
+przycisk = Button(window, text="Zainstaluj!", command=button, font=("", 19)).place(x=width/2.6,y=length-60)
 
 window.resizable(0,0)
 window.mainloop()
