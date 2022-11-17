@@ -59,14 +59,14 @@ def button(*args):
 window = Tk()
 window.title("Chocolatey")
 window.geometry(f"{width}x{length}")
-#set_appearance_mode("dark")
-#set_default_color_theme("dark-blue")
+set_appearance_mode("dark")
+set_default_color_theme("dark-blue")
 ikonka = ImageTk.PhotoImage(Image.open('kanardi.png'))
 window.wm_iconphoto(False, ikonka)
 
 for prog in customowe:
     var = IntVar()
-    CheckBox(window, text=prog, variable=var, onvalue=1, offvalue=0, text_font=("", 18)).place(x=width/20, y=a)
+    CTkCheckBox(window, text=prog, variable=var, onvalue=1, offvalue=0, text_font=("", 18)).place(x=width/20, y=a)
     data[prog] = var
     a += 40
 
@@ -78,9 +78,9 @@ for zest in zestawy:
     c += 40
 """
 
-programy = Label(window, text="Wybierz programy/zestaw do instalacji: ", text_font=("", 19, 'bold')).place(x=width/9, y=length/30)
+programy = CTkLabel(window, text="Wybierz programy/zestaw do instalacji: ", text_font=("", 19, 'bold')).place(x=width/9, y=length/30)
 #przycisk = CTkButton(window, text="Zainstaluj!", command=button, fg_color='grey', hover_color='green', text_font=("", 19,)).place(x=width/2.6,y=length-60)
-przycisk = Button(window, text="Zainstaluj!", command=button, font=("", 19)).place(x=width/2.6,y=length-60)
+przycisk = CTkButton(window, text="Zainstaluj!", command=button, text_font=("", 19)).place(x=width/2.6,y=length-60)
 
 window.resizable(0,0)
 window.mainloop()
