@@ -12,18 +12,6 @@ odnosniki = ['choco install googlechrome -y',
  'start revit.exe'
  ]
 
-zestawy = ['Optident', 'Rexer', 'Arkana', 'Invent', 'DTA', 'VM', 'Netkable', 'HMMH']
-odnosniki_zestawy = {
-    'optident' : '',
-    'rexer' : '',
-    'arkana' : '',
-    'invent' : '',
-    'dta' : '',
-    'vm' : '',
-    'netkable' : '',
-    'hmmh' : ''
-                    }
-
 data = {}
 data2 = {}
 width = 600
@@ -44,18 +32,11 @@ def button(*args):
         else:
             print('brak')
             x+=1
-    for p in zestawy:
-        if values2[y][1] == 1:
-            os.system(f'{odnosniki_zestawy[y]}')
-            y+=1
-        else:
-            print('brak')
-            y+=1
 
 window = CTk()
 window.title("Chocolatey")
 window.geometry(f"{width}x{length}")
-icon = ImageTk.PhotoImage(Image.open('kanardi.jpg'))
+icon = ImageTk.PhotoImage(Image.open('kanardi.png'))
 window.wm_iconphoto(False, icon)
 
 for prog in customowe:
@@ -63,12 +44,6 @@ for prog in customowe:
     CTkCheckBox(window, text=prog, variable=var, onvalue=1, offvalue=0, text_font=("", 18)).place(x=width/20, y=a)
     data[prog] = var
     a += 40
-
-for zest in zestawy:
-    var2 = IntVar()
-    CTkCheckBox(window, text=zest, variable=var2, onvalue=1, offvalue=0, text_font=("", 18)).place(x=width/1.5, y=c)
-    data[prog] = var2
-    c += 40
 
 programy = CTkLabel(window, text="Wybierz programy/zestaw do instalacji: ", text_font=("", 19, 'bold')).place(x=width/9, y=length/30)
 przycisk = CTkButton(window, text="Zainstaluj!", command=button, text_font=("", 19)).place(x=width/2.6,y=length-60)
