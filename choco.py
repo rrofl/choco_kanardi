@@ -17,7 +17,7 @@ a = 80
 b = 0
 c = 80
 
-def button_single(*args):
+def button(*args):
     values = [(prog, var.get()) for prog, var in data.items()]
     x = 0
     for q in customowe:
@@ -39,7 +39,7 @@ for prog in customowe:
     a += 40
 
 programy = Label(window, text="Wybierz programy/zestaw do instalacji: ", font=("", 19, 'bold')).place(x=width/9, y=length/30)
-przycisk = Button(window, text="Zainstaluj!", command=button_single, font=("", 19)).place(x=width/2.6,y=length-60)
+przycisk = Button(window, text="Zainstaluj!", command=button, font=("", 19)).place(x=width/2.6,y=length-60)
 
 window.resizable(0,0)
 window.mainloop()
