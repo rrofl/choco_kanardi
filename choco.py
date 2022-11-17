@@ -1,7 +1,5 @@
 from tkinter import *
 import os
-import multiprocessing
-multiprocessing.freeze_support()
 
 customowe = ['Google Chrome', 'Adobe Reader', '7 Zip', 'VLC', 'Slack', 'Revit']
 odnosniki = ['choco install googlechrome -y',
