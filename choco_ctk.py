@@ -64,7 +64,7 @@ def lista(wybor_lista):
 window = CTk()
 window.title('Chocolatey')
 window.geometry(f'{width}x{length}')
-icon = ImageTk.PhotoImage(Image.open('kanardi.png'))
+icon = ImageTk.PhotoImage(Image.open('kanardi.ico'))
 window.wm_iconphoto(False, icon)
 
 for prog in customowe:
