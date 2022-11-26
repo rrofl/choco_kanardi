@@ -69,12 +69,12 @@ window.wm_iconphoto(False, icon)
 
 for prog in customowe:
     var = IntVar()
-    CTkCheckBox(window, text=prog, variable=var, onvalue=1, offvalue=0, text_font=('', 18)).place(x=width/20, y=a)
+    CTkCheckBox(window, text=prog, variable=var, onvalue=1, offvalue=0, hover_color='#a4dded', text_font=('', 18)).place(x=width/20, y=a)
     data[prog] = var
     a += 40
 
 var_lista = IntVar()
-wysuwana_lista = CTkComboBox(window, values = zestawy, command = lista, variable = var_lista)
+wysuwana_lista = CTkComboBox(window, values = zestawy, command = lista, variable = var_lista, text_font=('', 14), dropdown_text_font=('', 14), button_hover_color='#a4dded', dropdown_hover_color='#a4dded')
 wysuwana_lista.place(x=width/3.5, y=length/7)
 wysuwana_lista.set('Zestawy')
 programy = CTkLabel(window, text='Wybierz zestaw/programy\n do instalacji: ', text_font=('', 19, 'bold')).place(x=width/20, y=length/30)
