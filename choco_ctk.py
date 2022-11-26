@@ -17,6 +17,7 @@ customowe = ['Google Chrome',
 'Total Commander',
 'Revit'
 ]
+
 odnosniki = ['choco install googlechrome -y',
 'choco install firefox -y', 
 'choco install 7zip.install -y', 
@@ -31,6 +32,7 @@ odnosniki = ['choco install googlechrome -y',
 'choco install totalcommander -y',
 'start revit.exe'
 ]
+
 zestawy = [
     'Optident', 'Rexer'
  ]
