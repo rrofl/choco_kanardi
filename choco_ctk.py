@@ -80,7 +80,7 @@ wysuwana_lista = CTkComboBox(window, values = zestawy, command = lista, variable
 wysuwana_lista.place(x=width/3.5, y=length/7)
 wysuwana_lista.set('Zestawy')
 ja = CTkLabel(window, text='by Artur Drab', text_font=('Open Sans Semibold', 8)).place(x=width/1.5, y=length/1.04)
-programy = CTkLabel(window, text='Wybierz zestaw/programy\n do instalacji: ', text_font=('Open Sans Semibold', 19, 'bold')).place(x=width/20, y=length/30)
+programy = CTkLabel(window, text='Wybierz zestaw/programy\n do instalacji: ', text_font=('Open Sans Semibold', 19, 'bold')).place(x=width/20, y=length/50)
 przycisk = CTkButton(window, text='Zainstaluj!', command=button, text_font=('Open Sans Semibold', 19)).place(x=width/3.5,y=length-60)
 
 window.resizable(0,0)
