@@ -71,16 +71,17 @@ window.wm_iconphoto(False, icon)
 
 for prog in customowe:
     var = IntVar()
-    CTkCheckBox(window, text=prog, variable=var, onvalue=1, offvalue=0, hover_color='#a4dded', text_font=('', 18)).place(x=width/20, y=a)
+    CTkCheckBox(window, text=prog, variable=var, onvalue=1, offvalue=0, hover_color='#a4dded', text_font=('Open Sans Semibold', 18)).place(x=width/20, y=a)
     data[prog] = var
     a += 40
 
 var_lista = IntVar()
-wysuwana_lista = CTkComboBox(window, values = zestawy, command = lista, variable = var_lista, text_font=('', 14), dropdown_text_font=('', 14), button_hover_color='#a4dded', dropdown_hover_color='#a4dded')
+wysuwana_lista = CTkComboBox(window, values = zestawy, command = lista, variable = var_lista, text_font=('Open Sans Semibold', 14), dropdown_text_font=('Open Sans Semibold', 14), button_hover_color='#a4dded', dropdown_hover_color='#a4dded')
 wysuwana_lista.place(x=width/3.5, y=length/7)
 wysuwana_lista.set('Zestawy')
-programy = CTkLabel(window, text='Wybierz zestaw/programy\n do instalacji: ', text_font=('', 19, 'bold')).place(x=width/20, y=length/30)
-przycisk = CTkButton(window, text='Zainstaluj!', command=button, text_font=('', 19)).place(x=width/3.5,y=length-60)
+ja = CTkLabel(window, text='by Artur Drab', text_font=('Open Sans Semibold', 8)).place(x=width/1.5, y=length/1.04)
+programy = CTkLabel(window, text='Wybierz zestaw/programy\n do instalacji: ', text_font=('Open Sans Semibold', 19, 'bold')).place(x=width/20, y=length/30)
+przycisk = CTkButton(window, text='Zainstaluj!', command=button, text_font=('Open Sans Semibold', 19)).place(x=width/3.5,y=length-60)
 
 window.resizable(0,0)
 window.mainloop()
